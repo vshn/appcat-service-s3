@@ -1,0 +1,32 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestAssert
+timeout: 10
+---
+apiVersion: cloudscale.crossplane.io/v1
+kind: ObjectsUser
+metadata:
+  annotations:
+    kuttl: '00-install'
+spec:
+  deletionPolicy: Delete
+  forProvider: {}
+  providerConfigRef:
+    name: provider-config
+  writeConnectionSecretToRef:
+    namespace: provider-cloudscale-system
+---
+apiVersion: cloudscale.crossplane.io/v1
+kind: Bucket
+metadata:
+  annotations:
+    kuttl: '00-install'
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    bucketName: my-provider-test-bucket-from-claim
+    credentialsSecretRef:
+      namespace: provider-cloudscale-system
+    endpointURL: objects.rma.cloudscale.ch
+    region: rma
+  providerConfigRef:
+    name: default

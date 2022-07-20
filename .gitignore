@@ -18,3 +18,6 @@ node_modules/
 # Charts
 .cr-release-packages/
 .cr-index/
+
+# kuttl kubeconfig
+kubeconfig
