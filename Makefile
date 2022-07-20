@@ -76,7 +76,7 @@ install-crd: generate kind-setup ## Install CRDs into cluster
 .PHONY: install-samples
 install-samples: export KUBECONFIG = $(KIND_KUBECONFIG)
 install-samples: generate-go install-crd ## Install samples into cluster
-	yq package/samples/*.yaml | kubectl apply -f -
+	yq package/samples/cloudscale.*.yaml | kubectl apply -f -
 
 .PHONY: run-operator
 run-operator: ## Run in Operator mode against your current kube context
