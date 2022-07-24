@@ -7,7 +7,7 @@ require (
 	github.com/cloudscale-ch/cloudscale-go-sdk/v2 v2.0.1
 	github.com/go-logr/logr v1.2.3
 	github.com/go-logr/zapr v1.2.3
-	github.com/minio/minio-go/v7 v7.0.31
+	github.com/minio/minio-go/v7 v7.0.32
 	github.com/stretchr/testify v1.8.0
 	github.com/urfave/cli/v2 v2.10.3
 	go.uber.org/zap v1.21.0
