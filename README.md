@@ -23,6 +23,7 @@ https://vshn.github.io/provider-cloudscale/
 * `go`
 * `helm`
 * `kubectl`
+* [`kuttl`](https://kuttl.dev/)
 * `yq`
 * `sed` (or `gsed` for Mac)
 
@@ -42,5 +43,14 @@ See all targets with `make help`
 ### QuickStart Demonstration
 
 1. Get an API token cloudscale.ch
-1. `export CLOUDSCALE_API_TOKEN=<the-token>`
-1. `make local-install install-samples`
+2. `export CLOUDSCALE_API_TOKEN=<the-token>`
+3. `make local-install install-samples`
+
+## Run Tests for XRD and Composition
+
+Testing of the composition is handled by kuttl. You need it installed on your machine in order to run the tests.
+
+Once you've installed it, you can simply run:
+`make test-crossplane`
+
+The tests themselves are located in the `test` folder.
